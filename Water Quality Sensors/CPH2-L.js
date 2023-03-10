@@ -9,7 +9,8 @@ const decodeCPH2 = function() {
         fPort: 15,
         bytes: new Uint8Array([0,0,0,0,8,7,0,36])
     }
-    console.log("Decoded data from hex: " + sampleReceivedData.bytes.map(x => x.toString(16).padStart(2, '0')).join(''))
+    let hexStr = Array.from(sampleReceivedData.bytes, byte => ('0' + (byte & 0xFF).toString(16)).slice(-2)).join(' ')
+    console.log("Decoded data from hex: " + hexStr)
     let decodedData = decodeUplink(sampleReceivedData)
     console.log("pH: " + decodedData.sensorReading)
     console.log("Temperature: " + decodedData.temperatureReading)
