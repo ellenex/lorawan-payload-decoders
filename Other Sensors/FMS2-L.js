@@ -14,7 +14,7 @@ const decodeFMS2 = function() {
     let decodedData = decodePulseCounterUplink(sampleReceivedData)
     console.log("Total Pulses: " + decodedData.pulseCounts)
     console.log("Flow Switch Spec: 2L per pulse")
-    console.log("Total Flow: " + ((decodedData.pulseCounts * 2)/10)+"L")
+    console.log("Total Flow: " + ((decodedData.pulseCounts * 2))+"L")
     console.log("Battery: " + decodedData.Battery)
 }
 

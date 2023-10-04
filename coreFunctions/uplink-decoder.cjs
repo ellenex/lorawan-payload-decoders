@@ -59,5 +59,5 @@ return num;
 }
 
 module.exports = {
-    decodeUplink, decodePulseCounterUplink
+    decodeUplink, decodePulseCounterUplink,
 }
