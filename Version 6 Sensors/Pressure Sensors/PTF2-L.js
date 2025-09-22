@@ -103,7 +103,7 @@ const SENSOR_MAP = {
   },
   "P": { 
     name: "Pressure", 
-    transform: v => `${Number(v)} bar`
+    transform: v => `${(Number(v)).toFixed(3)} bar`
   }
 };
 
