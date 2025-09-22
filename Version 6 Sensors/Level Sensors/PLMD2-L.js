@@ -100,7 +100,7 @@ const LiquidDensity = 1;  //Water = 1, Diesel = 0.85
 const SENSOR_MAP = {
   "L": { 
     name: "Level", 
-    transform: v => `${Number(v) / LiquidDensity} m`
+    transform: v => `${(Number(v) / LiquidDensity).toFixed(3)} m`
   },
   "v": { 
     name: "Battery Voltage", 
@@ -108,7 +108,7 @@ const SENSOR_MAP = {
   },
 "T": { 
     name: "Temperature", 
-    transform: v => `${Number(v)} °C`
+    transform: v => `${(Number(v)).toFixed(3)} °C`
   }
 };
 
