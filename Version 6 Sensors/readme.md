@@ -55,4 +55,22 @@ For each different platform the changes has to be made on the (// --- Generic en
     }
 **You can then publish the parsed object to your database, dashboard, or analytics pipeline.**
 
+**3️⃣ Actility / ThingPark**
+      Entry point: Typically your own function (e.g., decodeActility).
+      Input: The payload bytes, sometimes from hex or base64, depending on configuration. You may need to convert to a byte array.
+      Output: Return the decoded JSON object. No wrapper (data/warnings/errors) is required.
+
+**Example:**
+        function decodeActility(payloadBytes) {
+      // If payload is a base64 string, convert it to a byte array first:
+      // const bytes = Array.from(Buffer.from(payloadBytes, 'base64'));
+    
+      // If payload is already a byte array:
+      const bytes = payloadBytes;
+    
+      const parsed = decodeCBOR(bytes);
+      return parsed; // JSON object
+    }
+
+      
 If you have any questions or quieries regarding payload decoders then please feel free to contact us at Support@lpwan.group
