@@ -98,9 +98,18 @@ const LiquidDensity = 1;  //Water = 1, Diesel = 0.85
 
 // --- Device-specific mapping (edit this as needed) ---
 const SENSOR_MAP = {
-  "L": { name: "Level(m)", transform: v => Number(v) / LiquidDensity },
-  "v": { name: "Battery Voltage(V)", transform: v => Number(v) / 1000 },
-  "T": { name: "temperature(°C)", transform: v => Number(v) }
+  "L": { 
+    name: "Level", 
+    transform: v => `${Number(v) / LiquidDensity} m`
+  },
+  "v": { 
+    name: "Battery Voltage", 
+    transform: v => `${(Number(v) / 1000).toFixed(3)} V`
+  },
+"T": { 
+    name: "Temperature", 
+    transform: v => `${Number(v)} °C`
+  }
 };
 
 function mapCbor(obj) {
