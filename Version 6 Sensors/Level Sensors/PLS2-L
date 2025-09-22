@@ -94,11 +94,12 @@ function decodeCBOR(buf) {
 
   return parseItem();
 }
+const LiquidDensity = 1;  //Water = 1, Diesel = 0.85
 
 // --- Device-specific mapping (edit this as needed) ---
 const SENSOR_MAP = {
-  "L": { name: "Level(m)", transform: v => Number(v) },
-  "v": { name: "Battery Voltage(V)", transform: v => Number(v)/ 1000 }
+  "L": { name: "Level(m)", transform: v => Number(v) / LiquidDensity },
+  "v": { name: "Battery Voltage(V)", transform: v => Number(v) / 1000 }
 };
 
 function mapCbor(obj) {
@@ -115,7 +116,7 @@ function mapCbor(obj) {
 }
 
 // --- Generic entry point ---
-function decode(input) {
+function decodeUplink(input) {
   try {
     const parsed = decodeCBOR(input.bytes);
     return { data: mapCbor(parsed), errors: [] };
