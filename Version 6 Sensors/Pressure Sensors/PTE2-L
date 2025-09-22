@@ -97,8 +97,14 @@ function decodeCBOR(buf) {
 
 // --- Device-specific mapping (edit this as needed) ---
 const SENSOR_MAP = {
-  "P": { name: "Pressure", transform: v => `${Number(v)} kg/cm²`  },
-  "v": { name: "Battery Voltage", transform: v => `${(Number(v) / 1000).toFixed(3)} V` }
+ "v": { 
+    name: "Battery Voltage", 
+    transform: v => `${(Number(v) / 1000).toFixed(3)} V`
+  },
+  "P": { 
+    name: "Pressure", 
+    transform: v => `${Number(v)} kg/cm²`
+  }
 };
 
 function mapCbor(obj) {
