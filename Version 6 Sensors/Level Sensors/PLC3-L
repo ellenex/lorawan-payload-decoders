@@ -101,7 +101,7 @@ const SENSOR_MAP = {
   "v": { 
     name: "Battery Voltage", 
     transform: v => `${(Number(v) / 1000).toFixed(3)} V`
-  },
+  }
 };
 
 function mapCbor(obj) {
