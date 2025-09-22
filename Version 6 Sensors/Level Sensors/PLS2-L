@@ -98,7 +98,7 @@ function decodeCBOR(buf) {
 // --- Device-specific mapping (edit this as needed) ---
 const SENSOR_MAP = {
   "L": { name: "Level(m)", transform: v => Number(v) },
-  "v": { name: "Battery Voltage(mv)", transform: v => Number(v) }
+  "v": { name: "Battery Voltage(V)", transform: v => Number(v)/ 1000 }
 };
 
 function mapCbor(obj) {
