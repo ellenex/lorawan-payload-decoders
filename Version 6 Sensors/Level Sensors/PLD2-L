@@ -100,7 +100,7 @@ const LiquidDensity = 1;  //Water = 1, Diesel = 0.85
 const SENSOR_MAP = {
   "L": { name: "Level(m)", transform: v => Number(v) / LiquidDensity },
   "v": { name: "Battery Voltage(V)", transform: v => Number(v) / 1000 },
-  "T": { name: "Temperature(°C)", transform: v => Number(v) },
+  "T": { name: "Temperature(°C)", transform: v => Number(v) }
 };
 
 function mapCbor(obj) {
