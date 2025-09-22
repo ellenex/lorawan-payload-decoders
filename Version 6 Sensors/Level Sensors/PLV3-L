@@ -98,7 +98,10 @@ const LiquidDensity = 1;  //Water = 1, Diesel = 0.85
 
 // --- Device-specific mapping (edit this as needed) ---
 const SENSOR_MAP = {
-  "v": { name: "Battery Voltage(V)", transform: v => Number(v) / 1000 }
+  "v": { 
+    name: "Battery Voltage", 
+    transform: v => `${(Number(v) / 1000).toFixed(3)} V`
+  }
 };
 
 function mapCbor(obj) {
@@ -106,16 +109,16 @@ function mapCbor(obj) {
 
   const out = {};
 
-  // Map other known fields
   for (const k in obj) {
     if (SENSOR_MAP[k]) {
       out[SENSOR_MAP[k].name] = SENSOR_MAP[k].transform(obj[k]);
     }
   }
 
-  // Compute level in meters if L1 and P1 exist
+  // If using L1 and P1 instead of raw L
   if ("L1" in obj && "P1" in obj) {
-    out["Level(m)"] = (Number(obj["L1"]) - (Number(obj["P1"]) * 10)) / LiquidDensity;
+    const level = (Number(obj["L1"]) - (Number(obj["P1"]) * 10)) / LiquidDensity;
+    out["Level"] = `${level} m`;
   }
 
   return out;
