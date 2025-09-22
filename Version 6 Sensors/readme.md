@@ -12,6 +12,7 @@ For each different platform the changes has to be made on the (// --- Generic en
     Entry point: Must be a function called decodeUplink.
     Input: An object with a bytes array (input.bytes) representing the payload.
     Output: Must be an object with these keys:
+    
       {
         "data": { ...decoded payload... },
         "warnings": [ ...optional messages... ],
@@ -19,6 +20,7 @@ For each different platform the changes has to be made on the (// --- Generic en
       }
 
 **Example**
+
       function decodeUplink(input) {
         try {
           const parsed = decodeCBOR(input.bytes);
@@ -35,6 +37,7 @@ For each different platform the changes has to be made on the (// --- Generic en
       Output: Return the JSON object directly (no warnings or errors wrapper needed).
 
 **Example:**
+
       function decodeChirpStack(input) {
         const parsed = decodeCBOR(input.bytes);
         return parsed; // JSON object
@@ -47,6 +50,7 @@ For each different platform the changes has to be made on the (// --- Generic en
       Output: Return the decoded object, or process it however you need.
 
 **Example:**
+
     function decode(payload) {
     
       // convert base64 or hex to byte array first if needed
@@ -62,6 +66,7 @@ For each different platform the changes has to be made on the (// --- Generic en
       Output: Return the decoded JSON object. No wrapper (data/warnings/errors) is required.
 
 **Example:**
+
         function decodeActility(payloadBytes) {
       // If payload is a base64 string, convert it to a byte array first:
       // const bytes = Array.from(Buffer.from(payloadBytes, 'base64'));
