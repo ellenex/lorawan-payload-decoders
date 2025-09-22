@@ -103,11 +103,11 @@ const SENSOR_MAP = {
   },
   "DP": { 
     name: "Differential Pressure", 
-    transform: v => `${Number(v)} Pa`
+    transform: v => `${(Number(v)).toFixed(3)} Pa`
   },
 "T": { 
     name: "Temperature", 
-    transform: v => `${Number(v)} °C`
+    transform: v => `${(Number(v)).toFixed(3)} °C`
   }
 };
 
