@@ -94,11 +94,10 @@ function decodeCBOR(buf) {
 
   return parseItem();
 }
-const LiquidDensity = 1;  //Water = 1, Diesel = 0.85
 
 // --- Device-specific mapping (edit this as needed) ---
 const SENSOR_MAP = {
-  "P": { name: "Pressure(bar)", transform: v => Number(v) / LiquidDensity },
+  "P": { name: "Pressure(bar)", transform: v => Number(v) },
   "v": { name: "Battery Voltage(V)", transform: v => Number(v) / 1000 }
 };
 
