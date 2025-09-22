@@ -108,6 +108,7 @@ const SENSOR_MAP = {
 "T": { 
     name: "Temperature", 
     transform: v => `${Number(v)} °C`
+}
 };
 
 function mapCbor(obj) {
