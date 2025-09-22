@@ -13,7 +13,7 @@ For each different platform the changes has to be made on the (// --- Generic en
     Entry point: Must be a function called decodeUplink.
     Input: An object with a bytes array (input.bytes) representing the payload.
     Output: Must be an object with these keys:
-    
+
       {
         "data": { ...decoded payload... },
         "warnings": [ ...optional messages... ],
