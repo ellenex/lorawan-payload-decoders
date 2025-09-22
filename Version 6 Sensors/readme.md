@@ -55,4 +55,4 @@ For each different platform the changes has to be made on the (// --- Generic en
     }
 **You can then publish the parsed object to your database, dashboard, or analytics pipeline.**
 
-If you have any questions or quieries regarding payload decoders then please feel free to contact us at suppo
+If you have any questions or quieries regarding payload decoders then please feel free to contact us at Support@lpwan.group
