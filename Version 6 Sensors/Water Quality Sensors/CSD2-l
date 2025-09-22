@@ -103,19 +103,19 @@ const SENSOR_MAP = {
   },
   "T": { 
     name: "Temperature", 
-    transform: v => `${Number(v)} °C`
+    transform: v => `${(Number(v)).toFixed(3)} °C`
   },
 "Con": { 
     name: "Conductivity", 
-    transform: v => `${Number(v)} μS/cm`
+    transform: v => `${(Number(v)).toFixed(3)} μS/cm`
   },
 "Sal": { 
     name: "Salinity", 
-    transform: v => `${Number(v)} ppt`
+    transform: v => `${(Number(v)).toFixed(3)} ppt`
   },
 "Res": { 
     name: "Resistivity", 
-    transform: v => `${Number(v)} Ωm`
+    transform: v => `${(Number(v)).toFixed(3)} Ωm`
   }
 };
 
