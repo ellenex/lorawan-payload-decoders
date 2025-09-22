@@ -48,6 +48,7 @@ For each different platform the changes has to be made on the (// --- Generic en
 
 **Example:**
     function decode(payload) {
+    
       // convert base64 or hex to byte array first if needed
       const bytes = Array.from(payload); 
       const parsed = decodeCBOR(bytes);
