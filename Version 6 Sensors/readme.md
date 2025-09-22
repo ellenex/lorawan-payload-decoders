@@ -9,6 +9,7 @@ The main idea is that different LoRaWAN platforms expect different formats for t
 For each different platform the changes has to be made on the (// --- Generic entry point) section.
 
 **1️⃣ TTN / TTS (The Things Network / The Things Stack)**
+
     Entry point: Must be a function called decodeUplink.
     Input: An object with a bytes array (input.bytes) representing the payload.
     Output: Must be an object with these keys:
@@ -32,6 +33,7 @@ For each different platform the changes has to be made on the (// --- Generic en
 **TTN console will call this automatically for each uplink, and it expects this exact format**
 
 **2️⃣ ChirpStack**
+
       Entry point: Can be any function, TTN-style wrapper is not required.
       Input: Typically just the payload in bytes (or base64, depending on your setup).
       Output: Return the JSON object directly (no warnings or errors wrapper needed).
@@ -45,6 +47,7 @@ For each different platform the changes has to be made on the (// --- Generic en
 **ChirpStack will use the returned object as the device payload fields.**
 
 **3️⃣ Helium / Loriot / Custom MQTT broker**
+
       Entry point: Typically your own function (e.g., decode).
       Input: The payload bytes, often from MQTT (payload), not wrapped in input.bytes.
       Output: Return the decoded object, or process it however you need.
@@ -61,6 +64,7 @@ For each different platform the changes has to be made on the (// --- Generic en
 **You can then publish the parsed object to your database, dashboard, or analytics pipeline.**
 
 **3️⃣ Actility / ThingPark**
+
       Entry point: Typically your own function (e.g., decodeActility).
       Input: The payload bytes, sometimes from hex or base64, depending on configuration. You may need to convert to a byte array.
       Output: Return the decoded JSON object. No wrapper (data/warnings/errors) is required.
