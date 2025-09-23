@@ -118,7 +118,7 @@ function mapCbor(obj) {
   // If using L1 and P1 instead of raw L
   if ("L1" in obj && "P1" in obj) {
     const level = (Number(obj["L1"]) - (Number(obj["P1"]) * 10)) / LiquidDensity;
-    out["Level"] = `${level} m`;
+    out["Level"] = `${(level).toFixed(3)} m`;
   }
 
   return out;
