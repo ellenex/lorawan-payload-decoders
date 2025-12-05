@@ -4,8 +4,8 @@
 "DC": {
   name: "Dry Contact",
   transform: v => {
-    if (v === 0) return `0 = Open Circuit`;
-    if (v === 1) return `1 = Closed Circuit`;
+    if (v === 0) return `0 = Closed Circuit`;
+    if (v === 1) return `1 = Open Circuit`;
     return `${v} = Unknown state`;
   }
 }
